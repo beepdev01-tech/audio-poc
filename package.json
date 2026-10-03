@@ -1,0 +1,32 @@
+{
+  "name": "audio-poc",
+  "version": "1.0.0",
+  "description": "Audio Processing POC with Electron + Web Audio API",
+  "main": "electron.cjs",
+  "scripts": {
+    "dev": "concurrently \"vite\" \"wait-on http://localhost:5173 && electron .\"",
+    "vite": "vite",
+    "electron": "electron .",
+    "build": "vite build && electron-builder"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "vite": "^6.0.3",
+    "wait-on": "^8.0.1"
+  },
+  "dependencies": {
+    "audify": "^1.10.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "build": {
+    "appId": "com.gadhouse.audio-poc",
+    "productName": "AudioPOC",
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}
